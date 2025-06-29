@@ -70,6 +70,11 @@ body {
       }
     }
 
+    .social {
+      display: flex;
+      gap: 20px;
+    }
+
     .heading {
       flex-grow: 1;
       display: flex;
@@ -99,7 +104,7 @@ body {
   }
 
   .projects {
-    padding-top: 140px;
+    padding-top: 100px;
     padding-bottom: 140px;
 
     .title {
@@ -200,13 +205,25 @@ body {
           text-transform: uppercase;
         }
 
-        h4 {
-          font-family: var(--third-family);
-          font-style: italic;
-          font-weight: 400;
-          font-size: 15px;
-          color: #000;
+        .location {
+          display: flex;
+          align-items: center;
           margin-top: 50px;
+
+
+          img {
+            margin-right: 10px;
+          }
+
+          h4 {
+            font-family: var(--third-family);
+            font-style: italic;
+            font-weight: 400;
+            font-size: 15px;
+            color: #2c4058;
+            margin-top: 0;
+            
+          }
         }
       }
     }
@@ -242,7 +259,8 @@ body {
         order: 1;
         margin-left: 0;
         margin-right: 70px;
-        text-align: right;
+
+
       }
 
       &>img {
@@ -254,14 +272,14 @@ body {
   }
 
   .news {
-    padding: 140px 0;
+    /* padding: 120px; */
     height: 978px;
-    background: 
+    background:
       linear-gradient(213deg, #24ccfa 0%, #3c7fd4 100%);
     position: relative;
-    overflow: hidden; 
-  
-   
+    overflow: hidden;
+
+
     &::before {
       content: '';
       position: absolute;
@@ -270,27 +288,27 @@ body {
       transform: translateX(-50%);
       width: 1600px;
       height: 978px;
-      /* background: url('../images/city-news.jpg') no-repeat bottom center; */
       background-size: contain;
-      opacity: 0.5; 
+      opacity: 0.5;
       z-index: 1;
     }
-  
+
     .container {
       position: relative;
       z-index: 2;
     }
-    
+
     .title {
       text-align: center;
       margin-bottom: 90px;
-      
+      padding-top: 100px;
+
       hr {
         width: 100px;
         border: 1px solid var(--color-white);
         margin-bottom: 15px;
       }
-      
+
       h2 {
         font-family: var(--font-family);
         font-weight: 700;
@@ -300,28 +318,28 @@ body {
         margin: 0;
       }
     }
-  
+
     .articles {
       display: flex;
       justify-content: center;
-      gap: 30px; 
+      gap: 30px;
     }
-  
+
 
     .article {
       width: 370px;
       height: 514px;
       background-color: var(--color-white);
       display: flex;
-      flex-direction: column; 
-  
-      & > img {
+      flex-direction: column;
+
+      &>img {
         width: 370px;
         height: 240px;
-        object-fit: cover; 
+        object-fit: cover;
       }
-  
-      
+
+
       h3 {
         font-family: var(--font-family);
         font-weight: 700;
@@ -331,7 +349,7 @@ body {
         padding: 30px 20px 15px 20px;
         margin: 0;
       }
-  
+
       p {
         font-family: var(--third-family);
         font-weight: 400;
@@ -340,25 +358,24 @@ body {
         line-height: 1.6;
         padding: 0 20px;
         margin: 0;
-        flex-grow: 1; 
+        flex-grow: 1;
       }
-  
-    
+
+
       .author {
-        width: 186px;
         height: 60px;
         display: flex;
         align-items: center;
         padding: 30px 20px;
-  
-      
+
+
         img {
           width: 60px;
           height: 60px;
-          border-radius: 50%; 
+          border-radius: 50%;
           margin-right: 20px;
         }
-  
+
         .author-info {
           h4 {
             font-family: var(--font-family);
@@ -368,7 +385,7 @@ body {
             text-transform: uppercase;
             margin: 0;
           }
-          
+
           h5 {
             font-family: var(--font-family);
             font-weight: 400;
@@ -384,13 +401,13 @@ body {
   .gallery {
     padding-top: 140px;
     padding-bottom: 140px;
-    
+
     .title {
       width: 212px;
       height: 84px;
       margin: 0 auto 90px auto;
       text-align: center;
-      
+
       hr {
         width: 100px;
         height: 1px;
@@ -398,7 +415,7 @@ body {
         background-color: #2c4058;
         margin-bottom: 15px;
       }
-      
+
       h2 {
         font-family: var(--font-family);
         font-weight: 700;
@@ -408,51 +425,55 @@ body {
         margin: 0;
       }
     }
-  
+
     .gallery-grid {
       width: 1170px;
       height: 548px;
       margin: 0 auto 50px auto;
-      
+
       display: grid;
-      grid-template-columns: repeat(4, 1fr); 
-      grid-template-rows: repeat(2, 1fr); 
-      gap: 10px; 
-      
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 10px;
+
       img {
         width: 100%;
         height: 100%;
-        object-fit: cover; 
+        object-fit: cover;
       }
-      
-      
-      & > :nth-child(1) {
+
+
+      &> :nth-child(1) {
         grid-column: 1 / 3;
         grid-row: 1 / 3;
-        
-  
+
+
         position: relative;
       }
-      & > :nth-child(2) {
-        grid-column: 3 / 4; 
-        grid-row: 1 / 2;   
+
+      &> :nth-child(2) {
+        grid-column: 3 / 4;
+        grid-row: 1 / 2;
       }
-      & > :nth-child(3) {
-        grid-column: 4 / 5; 
-        grid-row: 1 / 2;    
+
+      &> :nth-child(3) {
+        grid-column: 4 / 5;
+        grid-row: 1 / 2;
       }
-      & > :nth-child(4) {
-        grid-column: 3 / 4; 
-        grid-row: 2 / 3;    
+
+      &> :nth-child(4) {
+        grid-column: 3 / 4;
+        grid-row: 2 / 3;
       }
-      & > :nth-child(5) {
-        grid-column: 4 / 5; 
-        grid-row: 2 / 3;    
+
+      &> :nth-child(5) {
+        grid-column: 4 / 5;
+        grid-row: 2 / 3;
       }
     }
-  
 
-    .gallery-grid > :nth-child(1)::after {
+
+    .gallery-grid> :nth-child(1)::after {
       content: '';
       position: absolute;
       top: 50%;
@@ -462,24 +483,24 @@ body {
       height: 70px;
       /* background-image: url('images/lupe.png'); */
       background-repeat: no-repeat;
-      opacity: 0; 
+      opacity: 0;
       transition: opacity 0.3s ease;
     }
-    
-    .gallery-grid > :nth-child(1):hover::after {
+
+    .gallery-grid> :nth-child(1):hover::after {
       opacity: 1;
     }
-  
+
 
     button {
-      display: block; 
+      display: block;
       margin: 0 auto;
       width: 190px;
       height: 50px;
       border: 1px solid #2c4058;
       background-color: transparent;
       cursor: pointer;
-      
+
       font-family: var(--font-family);
       font-weight: 400;
       font-size: 14px;
@@ -487,15 +508,16 @@ body {
       text-transform: uppercase;
     }
   }
+
   .contact {
-    height: 700px; 
+    height: 700px;
     padding: 0;
     background: url('../images/map.png') no-repeat center center / cover;
-    
+
     display: flex;
     justify-content: center;
     align-items: center;
-  
+
     .contact-box {
       width: 770px;
       height: 450px;
@@ -503,29 +525,29 @@ body {
       box-shadow: 0 -4px 30px 0 rgba(133, 133, 133, 0.2);
       padding: 60px;
       position: relative;
-      overflow: hidden; 
-      
+      overflow: hidden;
+
       display: flex;
       justify-content: space-between;
-      align-items: flex-start; 
-  
+      align-items: flex-start;
+
       &::before {
         content: '';
         position: absolute;
         bottom: 0;
         right: 0;
-        width: 485px; 
+        width: 485px;
         height: 275px;
         background: url('../images/city-background.png') no-repeat bottom right;
         z-index: 1;
       }
-      
-      & > * {
+
+      &>* {
         position: relative;
         z-index: 2;
       }
     }
-  
+
     .title {
       position: absolute;
       top: 60px;
@@ -533,7 +555,7 @@ body {
       transform: translateX(-50%);
       width: 332px;
       height: 84px;
-      
+
       hr {
         width: 100px;
         height: 1px;
@@ -541,7 +563,7 @@ body {
         background-color: #2c4058;
         margin: 0 auto 15px auto;
       }
-      
+
       h2 {
         font-family: var(--font-family);
         font-weight: 700;
@@ -551,59 +573,59 @@ body {
         margin: 0;
       }
     }
-    
-    
+
+
     .contacts-info {
       width: 286px;
-      margin-top: 100px; 
-  
+      margin-top: 100px;
+
       ul {
         list-style: none;
         padding: 0;
         margin: 0;
       }
-      
+
       li {
         font-family: var(--font-family);
         font-size: 18px;
         line-height: 156%;
         color: #000;
         margin-bottom: 30px;
-        
+
         display: flex;
         align-items: center;
-  
-  
+
+
         &::before {
-          font-family: var(--font3); 
+          font-family: var(--font3);
           font-size: 24px;
           color: var(--color-purple);
           margin-right: 15px;
         }
       }
     }
-    
+
     form {
       width: 310px;
       height: 195px;
       margin-top: 100px;
-  
+
       input {
         width: 310px;
         height: 41px;
         border: none;
         border-bottom: 1px solid #2c4058;
         background-color: transparent;
-        
+
         font-family: var(--font-family);
         font-weight: 400;
         font-size: 18px;
         color: #000;
-        
+
         &:focus {
           outline: none;
         }
-  
+
         &::placeholder {
           font-family: var(--font-family);
           font-weight: 400;
@@ -612,12 +634,12 @@ body {
           opacity: 0.5;
         }
       }
-      
+
       input[type="email"] {
         margin-top: 30px;
         opacity: 0.2;
       }
-      
+
       button {
         width: 140px;
         height: 50px;
@@ -625,7 +647,7 @@ body {
         background-color: transparent;
         margin-top: 25px;
         cursor: pointer;
-        
+
         font-family: var(--font-family);
         font-weight: 400;
         font-size: 18px;
@@ -634,18 +656,18 @@ body {
       }
     }
   }
-  
-  
+
+
   .footer {
     padding: 50px 0;
     background: linear-gradient(to right, var(--color-blue), var(--color-purple));
-  
+
     .container {
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
-    
+
     p {
       font-family: var(--third-family);
       font-size: 14px;
